@@ -1,8 +1,12 @@
-const http = require("http")
+const express = require('express')
+const app = express()
 
-http.createServer(function(req,res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'})
-    res.end("Hello World\n")
-}).listen(8000)
+app.get('/', function(req, res) {
+    res.send('Hello World')
+})
 
-console.log('Server running at http://127.0.0.1:8000')
+app.listen(3000, function() {
+    console.log('Example App listening on port 3000!')
+})
+
+//http://127.0.0.1:3000/
